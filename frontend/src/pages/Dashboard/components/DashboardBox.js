@@ -1,0 +1,38 @@
+import Button from '@mui/material/Button';
+import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import TrendingDownIcon from '@mui/icons-material/TrendingDown';
+
+const DashboardBox = (props) =>{
+    return(
+       <>
+       <Button className="dashboardBox"  style={{
+        backgroundImage: `linear-gradient(to right, ${props.color?.[0]}, ${props.color?.[1] })`
+       }}>
+
+        {
+            props.grow === true ?
+
+            <span className='chart'><TrendingUpIcon/></span>
+
+            :
+
+            <span className='chart'><TrendingDownIcon/></span>
+        }
+
+        <div className="d-flex w-100">
+            <div className="col1">
+                <h4 className="text-white mb-0"> {props.title} </h4>
+                <span className="text-white"> 10 </span>
+            </div>
+
+            <div className="iconbox">
+                <span className="icon">
+                    {props.icon}
+                </span>
+            </div>
+        </div>
+       </Button>
+       </> 
+    )
+}
+export default DashboardBox;
